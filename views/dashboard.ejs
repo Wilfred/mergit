@@ -1,0 +1,11 @@
+<%- include('layout', { title, body: `
+<h1>Merge Queue</h1>
+<p class="subtitle">Pull requests waiting to be merged.</p>
+
+<div class="card">
+  ${queue.length === 0
+    ? '<p class="empty">No pull requests in the queue.</p>'
+    : '<ul class="pr-list">' + queue.map(pr => '<li>' + pr.title + '</li>').join('') + '</ul>'
+  }
+</div>
+` }) %>

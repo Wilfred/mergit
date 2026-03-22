@@ -1,0 +1,11 @@
+<%- include('layout', { title, body: `
+<h1>Merge History</h1>
+<p class="subtitle">Log of completed merges.</p>
+
+<div class="card">
+  ${merges.length === 0
+    ? '<p class="empty">No merges recorded yet.</p>'
+    : '<ul class="pr-list">' + merges.map(m => '<li>' + m.title + '</li>').join('') + '</ul>'
+  }
+</div>
+` }) %>
